@@ -1,113 +1,125 @@
-# Sistema de Inventarios - Productos Electrónicos Efevrései
+# Sistema de Inventario - Efevresei 📦
 
-Este proyecto es un sistema de inventarios desarrollado para la empresa **Productos Electrónicos Efevrései**. El sistema permite gestionar productos electrónicos, realizar operaciones CRUD (crear, leer, actualizar y eliminar) y visualizar datos en una interfaz interactiva.
+Sistema de gestión de inventario moderno y eficiente desarrollado con React y TypeScript.
 
----
 
-## 🛠️ Tecnologías Utilizadas
+## 🚀 Tecnologías Utilizadas
 
-- **PHP**: Para la lógica del servidor.
-- **MySQL**: Como base de datos.
-- **JavaScript**: Para interactividad y lógica del cliente.
-- **CSS** y **Bootstrap**: Para diseño y estilización.
-- **HTML**: Para la estructura del proyecto.
-
----
+- **React**: Framework de JavaScript para la interfaz de usuario
+- **TypeScript**: Superset de JavaScript con tipado estático
+- **Tailwind CSS**: Framework de CSS para diseño moderno y responsivo
+- **Lucide React**: Biblioteca de iconos modernos
+- **LocalStorage**: Para persistencia de datos en el navegador
+- **Vite**: Herramienta de desarrollo rápida para aplicaciones web
 
 ## 📁 Estructura del Proyecto
 
-- `/assets/css`: Archivos de estilos CSS.
-- `/assets/js`: Scripts JavaScript.
-- `/assets/images`: Imágenes de los productos.
-- `/config`: Configuración de la base de datos.
-- `/controllers`: Lógica del servidor (CRUD).
-- `/models`: Modelos de datos (vacío, para expansión futura).
-- `/views`: Páginas web del sistema.
-- `/reports`: Espacio para reportes futuros.
-- `database.sql`: Archivo para crear e inicializar la base de datos.
+```
+/src
+  /components
+    - Header.tsx         # Componente de encabezado
+    - ProductoForm.tsx   # Formulario para agregar/editar productos
+    - ProductoList.tsx   # Lista de productos con acciones
+  /types
+    - index.ts          # Definiciones de tipos TypeScript
+  /utils
+    - storage.ts        # Utilidades para manejo de LocalStorage
+  - App.tsx             # Componente principal
+  - main.tsx           # Punto de entrada
+  - index.css          # Estilos globales
+```
+
+## ✨ Características
+
+### Gestión de Productos
+- ✅ Agregar nuevos productos
+- ✅ Editar productos existentes
+- ✅ Eliminar productos
+- ✅ Ver listado de productos
+- ✅ Filtrar por categoría
+- ✅ Búsqueda por nombre o descripción
+
+### Datos del Producto
+- 📝 Nombre
+- 📋 Descripción
+- 💰 Precio
+- 🔢 Cantidad en stock
+- 🖼️ Imagen (URL)
+- 📁 Categoría
+- 📅 Fecha de registro
+
+### Interfaz de Usuario
+- 🎨 Diseño moderno y responsivo
+- 📱 Adaptable a diferentes dispositivos
+- 🔍 Búsqueda en tiempo real
+- 🏷️ Filtrado por categorías
+- 💫 Animaciones suaves
+
+## 🛠️ Requisitos Previos
+
+- Node.js (versión 14 o superior)
+- npm o yarn
+- Navegador web moderno
+
+## ⚙️ Instalación
+
+1. Clonar el repositorio:
+```bash
+git clone [URL_DEL_REPOSITORIO]
+```
+
+2. Instalar dependencias:
+```bash
+npm install
+```
+
+3. Iniciar el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+## 💻 Uso
+
+1. **Agregar Producto**:
+   - Click en "Agregar Nuevo Producto"
+   - Llenar todos los campos requeridos
+   - Proporcionar URL de imagen válida
+   - Click en "Agregar Producto"
+
+2. **Editar Producto**:
+   - Click en el botón "Editar" del producto
+   - Modificar los campos necesarios
+   - Click en "Guardar Cambios"
+
+3. **Eliminar Producto**:
+   - Click en el botón "Eliminar" del producto
+   - Confirmar la acción
+
+4. **Filtrar Productos**:
+   - Usar la barra de búsqueda para filtrar por nombre/descripción
+   - Seleccionar categoría del menú desplegable
+
+## 🔄 Persistencia de Datos
+
+Los datos se almacenan en el LocalStorage del navegador, permitiendo:
+- Persistencia entre sesiones
+- Acceso rápido a los datos
+- Funcionamiento sin conexión
+
+## 🎯 Próximas Mejoras
+
+- [ ] Autenticación de usuarios
+- [ ] Exportación de datos a CSV/Excel
+- [ ] Historial de cambios
+- [ ] Categorías personalizables
+- [ ] Modo oscuro
+- [ ] Estadísticas y reportes
+
+## 👨‍💻 Desarrollador
+
+**Carlos Andrés Amaya Moncada**
+- 📧 Email: caamaya3102@gmail.com
 
 ---
 
-## 🚀 Instalación y Configuración
-
-### 1️⃣ Requisitos Previos
-
-- PHP >= 7.4
-- Servidor web (XAMPP, WAMP, Laragon, etc.)
-- MySQL >= 5.7
-- Navegador web
-
-### 2️⃣ Instalación
-
-1. Descarga y descomprime el proyecto en la carpeta raíz de tu servidor web (por ejemplo, `htdocs` para XAMPP).
-
-2. Crea la base de datos importando el archivo `database.sql` en tu servidor MySQL:
-   ```bash
-   mysql -u [usuario] -p [nombre_base_datos] < database.sql
-   ```
-
-3. Configura el archivo de conexión en `config/db.php`:
-   ```php
-   $host = 'localhost';        // Servidor de base de datos
-   $db = 'sistema_inventario'; // Nombre de la base de datos
-   $user = 'root';             // Usuario de MySQL
-   $password = '';             // Contraseña de MySQL
-   ```
-
-4. Asegúrate de que las extensiones de PHP necesarias (PDO, MySQL) estén habilitadas en tu configuración (`php.ini`).
-
-### 3️⃣ Ejecución
-
-1. Inicia el servidor web y MySQL.
-2. Accede al sistema desde tu navegador:
-   ```
-   http://localhost/proyecto_inventario/views/productos.php
-   ```
-
----
-
-## 📋 Funcionalidades
-
-1. **Gestión de Productos**:
-   - Ver listado de productos.
-   - Agregar nuevos productos con nombre, descripción, precio, cantidad e imagen.
-   - Eliminar productos existentes.
-   - Actualizar detalles de productos (pendiente de implementación).
-
-2. **Interfaz Amigable**:
-   - Diseño responsivo con Bootstrap.
-   - Interacciones dinámicas con JavaScript.
-
-3. **Base de Datos Precargada**:
-   - 10 productos iniciales listos para probar.
-
----
-
-## 🖼️ Capturas de Pantalla
-
-1. **Listado de Productos**  
-   _Pantalla de visualización con tabla interactiva._  
-   _Ejemplo de imágenes precargadas de productos._
-
----
-
-## 🛠️ Expansión Futura
-
-- Implementar autenticación de usuarios.
-- Generación de reportes en PDF.
-- Funcionalidad de actualización de productos.
-
----
-
-## 📧 Soporte
-
-Para cualquier duda o problema, contacta al correo caamaya3102@gmail.com.
-
----
-
-## 📝 Licencia
-
-Este proyecto puedes usarlo, modificarlo y distribuirlo libremente.
-
-
-¡Gracias por usar este sistema de inventarios! 💻🚀
+Desarrollado con ❤️ para Efevresei
