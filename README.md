@@ -65,7 +65,7 @@ Sistema de gestión de inventario moderno y eficiente desarrollado con React y T
 
 1. Clonar el repositorio:
 ```bash
-git clone [URL_DEL_REPOSITORIO]
+https://github.com/CarlosAndresAmayaMoncada/Sistema_web_efevresei.git
 ```
 
 2. Instalar dependencias:
